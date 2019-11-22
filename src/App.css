@@ -20,3 +20,52 @@
 .App-link {
   color: #09d3ac;
 }
+
+ body {
+  background-color: #F4A513
+}
+
+#welcome{
+  font-family: 'Fontdiner Swanky', cursive;
+  font-size: 65px;
+  text-align: center;
+}
+
+#looking {
+  font-family: 'Fontdiner Swanky', cursive;
+}
+
+button {
+  padding: 30px;
+  font-size: 20px;
+  font-family: 'Fontdiner Swanky', cursive;
+  display: inline-block;
+  background-color: #A32C23;
+  border: none;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+}
+
+button:hover{
+  background-color: #004D42;
+}
+
+#onejoke {
+  float: left;
+  margin-left: 15px;
+}
+
+#tenjokes {
+  float: right;
+  float: bottom;
+  margin-right: 15px;
+  
+}
+
+#header{
+ background-color: #A32C23;
+ padding: 1px;
+ text-align:center;
+ font-family: 'Dancing Script', cursive;
+ font-size: 15px;
+}
