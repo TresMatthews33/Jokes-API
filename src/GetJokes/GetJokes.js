@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import Header from '../Header/Header';
 
 class GetJokes extends Component {
 
@@ -10,13 +11,14 @@ class GetJokes extends Component {
 
     GetRandomJoke = () => {
 
+        const _this = this;
 
         axios({
             method: "GET",
-            url: "https://official-joke-api.appspot.com/random_joke"
+            url: "https://official-joke-api.appspot.com/jokes/programming/random"
         })
         .then(function(response){
-            console.log(response)
+            _this.setState({ jokes: response.data.jokes || [] });
         })
         .catch(function(error) {
             console.log(error);
@@ -25,13 +27,14 @@ class GetJokes extends Component {
 
     GetTenRandomJokes = () => {
 
+        const _this = this;
 
         axios({
             method: "GET",
-            url: "https://official-joke-api.appspot.com/random_ten"
+            url: "https://official-joke-api.appspot.com/jokes/programming/ten"
         })
         .then(function(response){
-            console.log(response)
+            _this.setState({ jokes: response.data.jokes || [] });
         })
         .catch(function(error) {
             console.log(error);
@@ -44,7 +47,10 @@ class GetJokes extends Component {
 
         return (
             <div>
-
+                <Header 
+                randomJokeHandler={this.GetRandomJoke}
+                randomTenJokesHandler={this.GetTenRandomJokes}
+                />
             </div>
         );
     }

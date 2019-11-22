@@ -33,6 +33,7 @@
 
 #looking {
   font-family: 'Fontdiner Swanky', cursive;
+  text-align: center;
 }
 
 button {
@@ -68,4 +69,9 @@ button:hover{
  text-align:center;
  font-family: 'Dancing Script', cursive;
  font-size: 15px;
+}
+
+#img{
+  display: block;
+  float: bottom;
 }
