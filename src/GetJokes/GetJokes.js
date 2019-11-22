@@ -20,10 +20,11 @@ class GetJokes extends Component {
 
         axios({
             method: "GET",
-            url: "https://cors-anywhere.herokuapp.com/https://official-joke-api.appspot.com/jokes/programming/random"
+            url: "https://official-joke-api.appspot.com/jokes/programming/random"
         })
         .then(function(response){
-            _this.setState({ jokes: response.data.jokes || [] });
+            console.log(response.data);
+            _this.setState({ jokes: response.data || [] });
         })
         .catch(function(error) {
             console.log(error);
@@ -36,25 +37,25 @@ class GetJokes extends Component {
 
         axios({
             method: "GET",
-            url: "https://cors-anywhere.herokuapp.com/https://official-joke-api.appspot.com/jokes/programming/ten"
+            url: "https://official-joke-api.appspot.com/jokes/programming/ten"
         })
         .then(function(response){
-            _this.setState({ jokes: response.data.jokes || [] });
+            _this.setState({ jokes: response.data || [] });
         })
         .catch(function(error) {
             console.log(error);
         })
     }
 
+
+    
     render() {
-
-        this.GetRandomJoke();
-
         return (
             <div>
                 <Header 
                 randomJokeHandler={this.GetRandomJoke}
                 randomTenJokesHandler={this.GetTenRandomJokes}
+                
                 />
 
                 <JokeList jokes={this.state.jokes} />

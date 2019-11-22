@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 class JokeList extends Component {
 
     getListItems() {
+
+        console.log(this.props.jokes);
+
         return this.props.jokes.map((joke) =>
             <li key={joke.id}>
                 <h1>{joke.setup}</h1>

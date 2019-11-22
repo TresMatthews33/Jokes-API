@@ -3,7 +3,9 @@ import './Header.css'
 
 class Header extends Component {
 
-
+    handleChange(event) {
+        this.setState({ textFieldValue: event.target.value })
+    }
 
     render() {
         return (
@@ -21,8 +23,7 @@ class Header extends Component {
 
                 <button id="tenjokes" onClick={() => this.props.randomTenJokesHandler()}>Click me to overdose on laughs!</button>
 
-                <img id="clown" src="../LaughTrack/Clown.jpg" alt="A Funny Clown"></img>;
-
+            
             </div>
         );
     }
